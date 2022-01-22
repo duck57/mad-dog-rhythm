@@ -43,22 +43,29 @@ fractional-time-demo = \relative c' {
   }
 }
 
-\markuplist \table-of-contents
-
-\dscore
-"Ambitus"
-#'(4 . 4)
-""
-<<
+amb-music = <<
   \new DrumVoice = "ambitus" \drummode {
-    \hide TimeSignature
     \stemUp
-    dum8 r r tek r ka r pop
+    dum8 \parenthesize dumt r tek r ka r pop 
+    fing32( 32 32 32 8) r fd32( 32 32 32 2)
   }
   \new Lyrics \lyricsto "ambitus" {
-    dum tek ka pop
+    dum _ tek ka pop finger -- rolls
   }
 >>
+
+ambitus = \dscore
+  "Ambitus"
+  ""
+  #'(4 . 4)
+  \markup { \column { 
+    \line { Top line is for the top hand }
+    \line { Bottom line is for the primary drumming hand }
+  }}
+  \amb-music
+
+\tocItem "Table of Contents"
+\markuplist \table-of-contents
 
 \include "swing.ly"
 
@@ -79,21 +86,20 @@ fractional-time-demo = \relative c' {
 \include "7.ly"
 
 #(tocSuper "Broken Bars")
-\markup \fill-line { 
-  \null 
-  { \override #'(line-width . 76) \justify {
+\explanation-text \markuplist {
     Unlike the Odd Couples, these bars do { \italic not } use their numerator in the time
     signature as the number of beats in the bar.  Rather, they instead have beats of unequal
     durations.
-  } }
-  \null }
+  }
 \include "11.ly"
 \include "13.ly"
 \include "15.ly"
 %\include "17.ly"
 %\include "19.ly"
 
+%\include "bizarre.ly"
 
+%\include "long.ly"
 
 \layout { }
 \midi { \tempo 4 = 120 }

@@ -1,7 +1,10 @@
 \version "2.21.0"
 \include "common.ly"
 
-#(tocTime '(6 9))
+#(tocSuper "Long Grooves")
+\explanation-text \markuplist {
+  Various patterns which are longer than about eight distinct beats.
+}
 
 \dscore
   "Rhythm name"

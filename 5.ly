@@ -1,10 +1,11 @@
 \version "2.21.0"
 \include "common.ly"
 
-#(tocTime '(5 . 4))
+#(tocTime '((5  4) (10 8)))
   
 \dscore
   "Where is the drum circle?"
+  ""
   #'(5 . 4)
   ""
   <<
@@ -19,6 +20,7 @@
   
 \dscore
   "Snoop"
+  ""
   #'(5 . 4)
   ""
   <<
@@ -33,8 +35,51 @@
   
 \dscore
   "Mars"
+  "Gustav Holst"
   #'(5 . 4)
   ""
   \drummode {
-    \tuplet 3/2 { dum8 tek ka } tek4 pop dum8 dum tek4 |
+    \tuplet 3/2 { dum8 ka ka } tek4-- pop dumt8 dum ka4 |
   }
+  
+  
+\dscore
+"Slow 5"
+"Turkish"
+#'(5 . 4)
+""
+\drummode {
+  dum4-> ka8 tek4-> ka8 tek-> ka dum4-> |
+}
+
+\dscore
+"Fast 5"
+""
+#'(5 . 8)
+\markup \column { 
+  \line { Can be played simultaneously with two players. }
+  \line { Either bar can be played separately as its own pattern. }
+}
+\drummode {
+  \time 2,3 5/8
+  dum8-> ka dum-> ka ka \bar "||"
+  dum-> ka tek-> ka tek-> |
+}
+
+\dscore
+"Dark Crystal Celebration"
+""
+#'(5 . 4)
+""
+\drummode {
+  dum4-> tek8 ka dum4-> tek-> tek-> |
+}
+
+\dscore
+"Shoush"
+""
+#'(5 . 4)
+""
+\drummode {
+  dum4-> tek8 ka tek ka dum4-> tek-> |
+}

@@ -3,19 +3,17 @@
 
 #(tocSuper "Swung Rhythms")
 
-\markup \fill-line { 
-  \null 
-  { \override #'(line-width . 76) \justify {
-    These are the only rhythms which are best when swung.
-    Rhythms elsewhere in this book should be played with straight \concat { \tiny \note { 8 } #1 } {s.}
-    Swapping which are played straight and which are swung may lead to pleasing results, but
-    they will be different than the intended rhythm on the page.  
-    % #(draw-fractional-time-signature 9 3/4 8)
-  } }
-  \null }
+\explanation-text \markuplist {
+  These are the only rhythms which are best when swung.
+  Rhythms elsewhere in this book should be played with straight \concat { \tiny \note { 8 } #1 } {s.}
+  Swapping which are played straight and which are swung may lead to pleasing results, but
+  they will be different than the intended rhythm on the page.  
+  % #(draw-fractional-time-signature 9 3/4 8)
+}
 
 \dscore
 "Don't Take Five"
+"The Justified Ancients of Mu-Mu"
 #'(4 . 4)
 ""
 <<
@@ -31,8 +29,18 @@
 
 \dscore
 "Take Five"
+"Dave Brubeck"
 #'(5 . 4)
 ""
 \drummode {
-  dum8 tek r dum tek4 dum tek |
+  dum8( tek)-> r dum-.->( tek4--) dum-- tek |
+}
+
+\dscore
+"Not Bolero"
+"Madog"
+#'(4 . 4)
+""
+\drummode {
+  dum8-> tek16 ka tek8 ka tek ka tek dum-> |
 }

@@ -16,6 +16,17 @@ superHeaderFormat =
   tocTimeMarkup = \markup \column {
     \fill-line { \null \fromproperty #'toc:text \null \null \fromproperty #'toc:text \null }
   }
+  scoreTitleMarkup = \markup { \column {
+    \fill-line {
+      \bold { \fromproperty #'header:piece }
+      \fromproperty #'header:opus
+    }
+                               }
+  }
+  #(set-paper-size "letter")
+  two-sided = ##t
+  binding-offset = 0.5\in
+  outer-margin = 0.3\in
 }
 
 sLine = \markup {
@@ -29,9 +40,9 @@ tocSuper =
    (let ((formatted-text 
           (superHeaderFormat text)))
      (add-text #{ \markup \fill-line {
-       \sLine
-       \superHeaderFormat \markup { \concat { \sLine #text \sLine } }
-       \sLine
+       \concat { "\\" \sLine }
+       \superHeaderFormat \markup { \huge \concat { "\\" \sLine #text \sLine "/" } }
+       \concat { \sLine "/" }
        } #})
      ; (superHeaderFormat text))
      (add-toc-item! 'tocSuperMarkup text)))
@@ -54,24 +65,34 @@ tocTime =
                                     } \vspace #2 } #})))
 
 #(define doumbek '(
-                    (dum	default	#f	-1)
-                    (tek	cross	#f	1)
+                    (dum	default	#f	-2)
+                    (tek	cross	#f	-1)
                     (ka	cross	#f	2)
-                    (pop	triangle	"accent"	2)))
+                    (pop	triangle	"accent"	-1)
+                    (dumt	default	#f	1)
+                    (finger-up	harmonic-mixed	#f	2)
+                    (finger-d	harmonic-mixed	#f	-1)
+                    ))
 drumPitchNames.dum = #'dum
 drumPitchNames.tek = #'tek
 drumPitchNames.ka  = #'ka
 drumPitchNames.pop = #'pop
+drumPitchNames.dumt = #'dumt
+drumPitchNames.fing = #'finger-up
+drumPitchNames.fd = #'finger-d
 
 % define the Scheme \score template
 dscore =
 #(define-scheme-function
-  (title ts perf-notes music)
-  (markup? fraction? markup? ly:music?)
+  (title comp ts perf-notes music)
+  (markup? markup? fraction? markup? ly:music?)
   (let ((score 
          #{
            \score {
-             \header { piece = $title }
+             \header { 
+               piece = $title 
+               opus = $comp
+             }
              \new DrumStaff \with {
                %instrumentName = "doumbek"
                \override StaffSymbol.line-count = #2
@@ -83,13 +104,34 @@ dscore =
                \stemUp
                \time $ts
                \set countPercentRepeats = ##t
+               \bar "[|:"
                $music 
-               \bar ":|." 
+               \bar ":|]" 
              }
            }
          #}))
     (add-score score)
-    (add-text #{ \markup { \hspace #10 $perf-notes } #})))
+    (add-text #{ \markup { 
+      \hspace #15 
+      \override #'(line-width . 69)
+      \wordwrap { $perf-notes }
+                 } 
+      #})
+    ))
+
+explanation-text =
+#(define-scheme-function
+  (text) (markup-list?)
+  #{
+    \markup \fill-line 
+    { 
+      \null
+      { 
+        \override #'(line-width . 76) \justify { $text }
+      }
+      \null 
+    }
+  #})
 
 
 to-internal-ts = 
@@ -126,3 +168,4 @@ fractionalTime =
     \time #(to-internal-ts top partial bottom)
   #})
 
+pbr = \bar ":|][|:"
