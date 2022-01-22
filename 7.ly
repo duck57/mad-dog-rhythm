@@ -1,7 +1,7 @@
 \version "2.21.0"
 \include "common.ly"
 
-#(tocTime '((7 4) (7 8)))
+#(tocTime '((7) (14)))
 
 \dscore
 "Train"
@@ -9,7 +9,7 @@
 #'(7 . 4)
 ""
 \drummode {
-  dum4 pop dum tek8 tek dum4 tek dum8 tek |
+  dum4 pop dum ka8 ka dum4 ka dum8 ka |
 }
 
 \dscore
@@ -18,12 +18,12 @@
 #'(7 . 4)
 "The second section show the underlying structure of the same 14 beats."
 \drummode {
-  dum2-> r8 dum r dum tek2 r8 dum |
-  r dum tek2 r8 dum r dum tek2 \bar ":|][|:"
+  dum2-> r8 dum r dum ka2 r8 dum |
+  r dum ka2 r8 dum r dum ka2 \bar ":|][|:"
   \time 4/4
   dum2-> r8 dum[ r dum] |
-  tek2 r8 dum[ r dum] |
-  tek2 r8 dum[ r dum] \time 2/4 tek2 |
+  ka2 r8 dum[ r dum] |
+  ka2 r8 dum[ r dum] \time 2/4 ka2 |
 }
 
 \dscore
@@ -36,17 +36,17 @@
 }
 \drummode {
   \mark B
-  dum2-> r8 dum[ r dum] tek4-> r8 tek[ r tek] \bar ":|][|:"
+  dum2-> r8 dum[ r dum] ka4-> r8 ka[ r ka] \bar ":|][|:"
   \mark L
-  dum4-> r8 dum[ r dum] tek2-> r8 tek[ r tek] \bar ":|][|:"
+  dum4-> r8 dum[ r dum] ka2-> r8 ka[ r ka] \bar ":|][|:"
   \mark B \time 4/4
   dum2-> r8 dum[ r dum] |
   \time 3/4
-  tek4.-> tek4 tek8 \bar ":|][|:"
+  ka4.-> ka4 ka8 \bar ":|][|:"
   \mark L \time 3/4
   dum4.-> dum4 dum8 |
   \time 4/4
-  tek2-> r8 tek[ r tek] |
+  ka2-> r8 ka[ r ka] |
 }
 
 \dscore

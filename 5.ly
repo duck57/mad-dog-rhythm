@@ -11,7 +11,7 @@
   <<
     \new DrumVoice = "d-circle" \drummode {
       \stemUp
-      dum4 tek8 tek r dum tek4 dum |
+      dum4 ka8 ka r dum ka4 dum |
     }
     \new Lyrics \lyricsto "d-circle" {
       Where is the drum cir -- cle?
@@ -26,7 +26,7 @@
   <<
     \new DrumVoice = "snoop" \drummode {
       \stemUp
-      dum8 dum r tek pop4 tek8 ka tek ka |
+      dum8 dum r ka pop4 tek8 ka tek ka |
     }
     \new Lyrics \lyricsto "snoop" {
       I like to smoke mar -- i -- juan -- a

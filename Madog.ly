@@ -8,20 +8,23 @@
 fractional-time-demo = \relative c' {
   \fractionalTime 2 #1/2 4
   c8 d e f4 |
-  g a8 b c |
+  g a8[ b c] |
   \fractionalTime 3 #3/4 4
-  \repeat unfold 2 { c,8[ d e f] g[ a b c16] | }
+  \time 8,7 15/16
+  \repeat unfold 2 { c,8 d e f g a b c16 | }
   \key f \minor
   \fractionalTime 2 #3/4 4
-  \repeat unfold 3 { bes8[ bes'] aes[ ees16 bes'8] aes | }
+  \time 4,3,4 11/16
+  \repeat unfold 3 { bes8 bes' aes ees16 bes'8 aes | }
   \key e \major
-  gis,8[ gis'] fis[ cis16 gis'8] fis \bar "|."
+  gis,8 gis' fis cis16 gis'8 fis \bar "|."
 }
 
 \header {
   title = "Madog's Mad Rhythm Sheet"
   composer = "Mad Dog"
   arranger = "Dr. Duck"
+  poet = "Wahru"
   subtitle = "I love drumming!"
   dedication = \markup \center-column {
     "To those who find"
@@ -41,6 +44,9 @@ fractional-time-demo = \relative c' {
     with \with-url #"http://lilypond.org/"
     \line { LilyPond \simple #(lilypond-version) (http://lilypond.org/) }
   }
+  meter = ""
+  subsubtitle = "A potpourri of rhythm"
+  copyright = "Compiled & Typeset 2022"
 }
 
 amb-music = <<
@@ -63,6 +69,12 @@ ambitus = \dscore
     \line { Bottom line is for the primary drumming hand }
   }}
   \amb-music
+  
+%{
+\explanation-text \markuplist { 
+  Test test test
+}
+%}
 
 \tocItem "Table of Contents"
 \markuplist \table-of-contents

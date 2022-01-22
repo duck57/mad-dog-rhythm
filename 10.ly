@@ -9,13 +9,13 @@
   #'(5 . 4)  % time signature here
   "The second section show the underlying structure of the same 10 beats."
   \drummode {
-    dum4-> r8 dum-- r dum-.( tek4-^) r8 dum8-- |
-    r dum-.( tek4-^) r8 dum-. r dum( tek4->) \bar ":|][|:"
+    dum4-> r8 dum-- r dum-.( ka4-^) r8 dum8-- |
+    r dum-.( ka4-^) r8 dum-. r dum( ka4->) \bar ":|][|:"
     \time 3/4
     dum4.-> dum4-- dum8-.( |
     pop4.) dum4-- dum8-.( |
-    tek4.)-^ dum4-. dum8( |
-    \time 1/4 tek4->)
+    ka4.)-^ dum4-. dum8( |
+    \time 1/4 ka4->)
   }
   
 \dscore
