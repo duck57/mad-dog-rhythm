@@ -50,6 +50,30 @@
 }
 
 \dscore
+"Yes I Really Can"
+"Dr. Duck"
+#'(7 . 4)
+"Pairs well with the turbo bass 7, turbo bass 14, Train, or offbeat 7."
+<<
+  \new DrumVoice = "yes" \drummode {
+    \stemUp
+    tek8 ka tek4 dum8 ka tek ka dum4 tek8 ka tek4 |
+  }
+  \new Lyrics \lyricsto "yes" {
+    Yes I can.  Yes I real -- ly can.  Yes I did.
+  }
+>>
+
+\dscore
+"Offbeat 7"
+"Dr. Duck"
+#'(7 . 4)
+"Needs another player on another rhythm to feel complete"
+\drummode {
+  r8 dum ka tek ka4 r r8 dum ka4 ka |
+}
+
+\dscore
 "Daveed's 28"
 "SCA"
 #'(7 . 8)

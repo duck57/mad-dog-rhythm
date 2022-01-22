@@ -68,3 +68,18 @@
     \mark \default  % K-funk
     dum8-> ka16 dum-> r ka tek8-> |
   }
+  
+  
+\dscore
+"Cuckoo"
+"Wahru Cleveland"
+#'(2 . 4)
+""
+<<
+  \new DrumVoice = "cocoa" \drummode {
+    dum16 ka8 tek16 ka tek ka8 |
+  }
+  \new Lyrics \lyricsto "cocoa" {
+    Coo -- coo for co -- coa puffs
+  }
+>>
