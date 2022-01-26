@@ -98,6 +98,7 @@ dscore =
                \override StaffSymbol.line-count = #2
                \override BarLine.bar-extent = #'(-1 . 1)
                drumStyleTable = #(alist->hash-table doumbek) 
+               \override Stem.stemlet-length = #0.75
              } {
                \tocItem \markup $title
                \numericTimeSignature
