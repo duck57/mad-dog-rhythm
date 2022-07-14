@@ -34,7 +34,7 @@
   tek8 ka tek ka4 tek8 ka4 tek8 r4 
   \bar "[|:"
   \mark "1" \repeat unfold 2 { dum8 |
-  ka4 dum8 ka4 dum8 ka tek4 ka4 }
+  ka4 dum8 ka4 dum8 ka[ tek r] ka4 }
   \pbr \mark "2" 
   \repeat unfold 2 { dum8 |
   r4 dum8 ka4 dum8 r4 dum8 ka4 } \bar ":|]" r8 \bar "[|:"

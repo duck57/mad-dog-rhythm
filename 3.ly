@@ -42,3 +42,12 @@ bcore = \drummode { tek8 \tuplet 3/2 { dum16 fing fing } tek8 \tuplet 3/2 { ka16
   \acciaccatura { fing32 32 }
   \bcore \tuplet 6/4 { tek16 ka tek ka tek ka } |
 }
+
+\dscore
+"Hatian Snake Dance"
+""
+#'(3 . 4)
+""
+\drummode {
+  dum8. ka16 tek8 dum r16 ka tek8 |
+}

@@ -171,3 +171,12 @@ didadi-core = \drummode {
   \didadi-core tek4 |
   \didadi-core dum8 dum |
 }
+
+\dscore
+"Afronegro"
+""
+#'(4 . 4)
+""
+\drummode {
+  dum8. dum16 dumt4 tek tek |
+}

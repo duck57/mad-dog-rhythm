@@ -27,6 +27,7 @@ superHeaderFormat =
   two-sided = ##t
   binding-offset = 0.5\in
   outer-margin = 0.3\in
+  page-breaking = #ly:minimal-breaking
 }
 
 sLine = \markup {
@@ -43,7 +44,8 @@ tocSuper =
        \concat { "\\" \sLine }
        \superHeaderFormat \markup { \huge \concat { "\\" \sLine #text \sLine "/" } }
        \concat { \sLine "/" }
-       } #})
+                  }
+       #})
      ; (superHeaderFormat text))
      (add-toc-item! 'tocSuperMarkup text)))
 
@@ -62,7 +64,10 @@ tocTime =
        \rotate #45 { $as-time } 
        $as-time % right
        \null % \null \null
-                                    } \vspace #2 } #})))
+                                    } \vspace #2 }
+       #})
+     ;(add-text \noPageBreak)
+     ))
 
 #(define doumbek '(
                     (dum	default	#f	-2)

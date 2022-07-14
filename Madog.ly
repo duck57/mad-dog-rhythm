@@ -79,10 +79,13 @@ ambitus = \dscore
 \tocItem "Table of Contents"
 \markuplist \table-of-contents
 
+%\pageBreak
 \include "swing.ly"
 
+\pageBreak
 #(tocSuper "Powers of 2")
 \include "2.ly"
+%\pageBreak
 \include "4.ly"
 \include "8.ly"
 
